@@ -13,6 +13,7 @@ activity names
 
 subject id of a person who participated in testing  		
 2	subject	
+                
                 30 persons participated
 
 group mean of mean for body acceleration on axis X, Y, Z		
