@@ -1,6 +1,8 @@
 
 library(dplyr)
-#Step 1 Reading column names from feature.txt, same list for 
+
+#Step 1
+#Reading column names from feature.txt, same list for 
 #train and test data sets
 
 features <- read.table(file = "./data/features.txt", stringsAsFactors = FALSE)
@@ -19,7 +21,7 @@ names(activity) <- c("id", "activity")
 #dim(activity)
 #head(activity)
 
-
+#Step 2
 #Reading train data set
 raw_train_data <- read.table(file = "./data/train/X_train.txt", 
                       colClasses = "numeric",
@@ -59,6 +61,7 @@ merged_x_train <- merge(x_train, activity, by.x ="activity_id",
 merged_x_train1 <- merged_x_train[unique(names(merged_x_train))]
 #Thus for training data set we have a data frame with 7352 raws and 480 columns
 
+#Step 3
 #Below steps will repeat the same procedure as above but for test data set
 
 #Reading test data set
@@ -93,19 +96,20 @@ merged_x_test <- merge(x_test, activity, by.x ="activity_id",
 #head(merged_x_test, 10)[, c(1, 2, 562, 563, 564)]
 #tail(merged_x_test)[, c(1, 2, 562, 563, 564)]
 
+
 #Taking only those columns that have unique names.  
 merged_x_test1 <- merged_x_test[unique(names(merged_x_test))]
-#Thus for training data set we have a data frame with 7352 raws and 480 columns
+#Thus for training data set we have a data frame with 2947 raws and 480 columns
 
 
 
 #l <- names(merged_x_train1) == names(merged_x_test1) #to check that the names 
                                                         #are the same
-
+#Step 4
 #Binding together trai data set and test data set
 merged_df <- rbind(merged_x_train1, merged_x_test1)
 
-
+#Step 5
 #Selecting columns that contain mean, std as we need only mean and std
 #in addition selecting columns activity and subject as they should not be lost
 
@@ -124,7 +128,8 @@ merged_df <- merged_df[,columnsToKeep]
 
 merged_df1 <- select(merged_df, -activity_id)
 
-#Creating a tide data set with the average of each variable 
+#Step 6
+#Creating a tidy data set with the average of each variable 
 #for each activity and each subject
 
 fdf <- aggregate(merged_df1, by = list(merged_df1$activity, merged_df1$subject), 
