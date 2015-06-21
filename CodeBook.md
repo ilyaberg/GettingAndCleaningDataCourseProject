@@ -3,11 +3,11 @@
 
 activity names          	
 1	activity	
-                WALKING
-                WALKING_UPSTAIRS
-                WALKING_DOWNSTAIRS
-                SITTING
-                STANDING
+                WALKING,
+                WALKING_UPSTAIRS, 
+                WALKING_DOWNSTAIRS,
+                SITTING,
+                STANDING,
                 LAYING
 
 
@@ -195,7 +195,7 @@ group mean of mean for angle X, Y, Z - gravity
 
 
 
-The original values for calculated mean value abover come from 
+The original values for calculated mean values above come from 
 the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. 
 These time domain signals (prefix 't' to denote time) were captured at a constant
 ate of 50 Hz. Then they were filtered using a median filter and a 3rd order low 

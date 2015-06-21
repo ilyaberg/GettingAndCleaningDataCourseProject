@@ -32,7 +32,7 @@ All the above steps are repeted for test data set.
 * Step 4
 In this step train data set and test data set are merged.
 
-*Step 5
+* Step 5
 From the merged data we select only those columns that contain mean and std string.
 
 * Step 6
