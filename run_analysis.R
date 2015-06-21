@@ -149,5 +149,10 @@ fdf <- select(fdf, -c(subject,activity))
 #Changing colNames Group.2 and Group.1 to subject and activity
 names(fdf)[1:2] <- c("activity", "subject")
 
-#write.table(fdf, file = "tidy_data_set.txt", row.names = FALSE)
+
+write.table(fdf, file = "tidy_data_set.txt", row.names = FALSE)
+
+
+
+
 
